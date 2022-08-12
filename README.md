@@ -55,7 +55,69 @@ You can provide multiple Erly TA paths:
 #                     path/to/cb3e5ba0-adf1-11e0-998b-0002a5d5c51b.stripped.elf"
 ```
 
-# How to load Early TA at U-Boot level using U-Boot comands.
+# How to load Early TA at U-Boot level using U-Boot commands.
+
+In U-Boot, OP-TEE driver will be available in this path:
+u-boot/drivers/tee/optee/
+https://github.com/u-boot/u-boot/tree/a94ab561e2f49a80d8579930e840b810ab1a1330/drivers/tee/optee
+
+The communication between OP-TEE and U-Boot explained here:
+u-boot/doc/README.tee
+https://github.com/u-boot/u-boot/blob/a94ab561e2f49a80d8579930e840b810ab1a1330/doc/README.tee
+
+There is commands to test AVB and RPMB at U-Boot level:
+https://github.com/u-boot/u-boot/blob/51aef405550e603ff702c034f0e2cd0f15bdf2bb/cmd/optee_rpmb.c
+
+```ruby
+U-Boot > optee_rpmb
+Provides commands for testing secure storage on RPMB on OPTEE
+
+U-Boot > optee_rpmb -h
+optee_rpmb read_pvalue <name> <bytes> - read a persistent value <name>
+optee_rpmb write_pvalue <name> <value> - write a persistent value <name>
+
+Example:
+
+U-boot > optee_rpmb write_pvalue test 1234
+D/TC:0   tee_entry_exchange_capabilities:100 Asynchronous notifications are disabled
+D/TC:0   tee_entry_exchange_capabilities:109 Dynamic shared memory is enabled
+D/TC:0 0 core_mmu_xlat_table_alloc:513 xlat tables used 3 / 8
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA 023f8f1a-292a-432b-8fc4-de8471358067
+D/TC:? 0 ldelf_load_ldelf:95 ldelf load address 0x40006000
+D/LD:  ldelf:134 Loading TS 023f8f1a-292a-432b-8fc4-de8471358067
+.....
+D/TC:0   tee_entry_exchange_capabilities:100 Asynchronous notifications are disabled
+D/TC:0   tee_entry_exchange_capabilities:109 Dynamic shared memory is enabled
+D/TC:0 0 core_mmu_xlat_table_alloc:513 xlat tables used 3 / 8
+D/TC:? 0 tee_ta_init_pseudo_ta_session:296 Lookup pseudo TA 023f8f1a-292a-432b-8fc4-de8471358067
+D/TC:? 0 ldelf_load_ldelf:95 ldelf load address 0x40006000
+D/LD:  ldelf:134 Loading TS 023f8f1a-292a-432b-8fc4-de8471358067
+....
+Wrote 5 bytes
+
+```
+
+https://github.com/u-boot/u-boot/blob/a94ab561e2f49a80d8579930e840b810ab1a1330/doc/README.tee
+
+## AVB Early TA
+Source code of Early TA code for AVB in OP-TEE OS : https://github.com/OP-TEE/optee_os/tree/master/ta/avb
+
+UUID of AVB TA: 
+https://github.com/OP-TEE/optee_os/blob/master/ta/avb/include/ta_avb.h#L7
+#define TA_AVB_UUID { 0x023f8f1a, 0x292a, 0x432b, \
+		      { 0x8f, 0xc4, 0xde, 0x84, 0x71, 0x35, 0x80, 0x67 } }
+
+To include this Early TA in your final OP-TEE binary, add a entry like this:
+core/arch/arm/plat-<soc>/conf.mk
+CFG_IN_TREE_EARLY_TAS += avb/023f8f1a-292a-432b-8fc4-de8471358067
+
+ Example for hikey platform they added like this:
+ https://github.com/OP-TEE/optee_os/blob/master/core/arch/arm/plat-hikey/conf.mk#L62
+ 
+ Finaly generated OP-TEE binary (tee.bin/tee.elf/uTee) will contain this .ta contents also. 
+ 
+ 
+
 
 https://github.com/OP-TEE/optee_os/commit/d0c636148b3a
 https://github.com/OP-TEE/optee_os/commit/ed30b6c7493cff4c2d29064f75b037f5677ddb67
