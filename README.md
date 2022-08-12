@@ -55,6 +55,8 @@ You can provide multiple Erly TA paths:
 #                     path/to/cb3e5ba0-adf1-11e0-998b-0002a5d5c51b.stripped.elf"
 ```
 
+# How to load Early TA at U-Boot level using U-Boot comands.
+
 https://github.com/OP-TEE/optee_os/commit/d0c636148b3a
 https://github.com/OP-TEE/optee_os/commit/ed30b6c7493cff4c2d29064f75b037f5677ddb67
 https://github.com/OP-TEE/optee_os/issues/4729
