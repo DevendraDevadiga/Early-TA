@@ -1,7 +1,8 @@
 # Early-TA
 Detail about Early TA
 
-#What is Early TA
+# What is Early TA
+
 Early TAs and Pseudo TAs are part of the OP-TEE binary so they are available immediately after boot. Early TAs run in user space, Pseudo TAs run in kernel space.
 early TAs are virtually identical to the REE FS TAs, but instead of being loaded from the Normal World file system, they are linked into a special data section in the TEE core blob.
 
@@ -54,7 +55,6 @@ You can provide multiple Erly TA paths:
 #                     path/to/cb3e5ba0-adf1-11e0-998b-0002a5d5c51b.stripped.elf"
 ```
 
-# so early use is limited to a subset of the TEE Internal Core API (crypto...)
 https://github.com/OP-TEE/optee_os/commit/d0c636148b3a
 https://github.com/OP-TEE/optee_os/commit/ed30b6c7493cff4c2d29064f75b037f5677ddb67
 https://github.com/OP-TEE/optee_os/issues/4729
