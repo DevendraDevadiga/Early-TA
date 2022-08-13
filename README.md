@@ -196,6 +196,45 @@ https://github.com/OP-TEE/optee_os/blob/3.6.0/mk/config.mk#L247-L253
 https://github.com/OP-TEE/optee_os/issues/3305
 
 
+
+
+
+
+
+
+
+
+
+
+# Ignore below contents. Only added for SEO purpose.
+
+#
+
+#
+
+
+#
+
+
+#
+
+#
+
+
+
+
+#
+
+
+
+
+
+
+
+
+
+
+
 # OP-TEE OS 
 # Add an early TA
 # Early TA/ User Space TA/ Pseudo TA - Which is loaded into OP-TEE first?
