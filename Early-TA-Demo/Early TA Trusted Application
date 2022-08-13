@@ -1,3 +1,33 @@
+# Add an early TA
+# Early TA/ User Space TA/ Pseudo TA - Which is loaded into OP-TEE first?
+# QEMU supports early TA?
+# Integrity check & encryption of early TA 
+# early TA: avb
+# Run ta before normal world starts
+# stm32mp1: CFG_EARLY_TA
+# EARLY_TA_PATHS
+# CFG_EARLY_TA=y
+
+
+# Add an early TA
+# Early TA/ User Space TA/ Pseudo TA - Which is loaded into OP-TEE first?
+# QEMU supports early TA?
+# Integrity check & encryption of early TA 
+# early TA: avb
+# Run ta before normal world starts
+# stm32mp1: CFG_EARLY_TA
+# EARLY_TA_PATHS
+# CFG_EARLY_TA=y
+# Add an early TA
+# Early TA/ User Space TA/ Pseudo TA - Which is loaded into OP-TEE first?
+# QEMU supports early TA?
+# Integrity check & encryption of early TA 
+# early TA: avb
+# Run ta before normal world starts
+# stm32mp1: CFG_EARLY_TA
+# EARLY_TA_PATHS
+# CFG_EARLY_TA=y
+
 Early TA
 Early Trusted Application.
 Early TA
