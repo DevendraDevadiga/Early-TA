@@ -1,7 +1,7 @@
 # Early-TA
 Detail about Early TA
 
-# What is Early TA
+# What is Early TA (Trusted Application)?
 
 Early TAs and Pseudo TAs are part of the OP-TEE binary so they are available immediately after boot. Early TAs run in user space, Pseudo TAs run in kernel space.
 early TAs are virtually identical to the REE FS TAs, but instead of being loaded from the Normal World file system, they are linked into a special data section in the TEE core blob.
