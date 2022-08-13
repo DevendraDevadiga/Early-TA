@@ -121,6 +121,31 @@ https://github.com/u-boot/u-boot/blob/a94ab561e2f49a80d8579930e840b810ab1a1330/d
 
 # How to add helloworld as Early TA and implement a command in U-Boot to communicate with HelloWorld TA
 
+## Add a command "optee_helloworld" in U-Boot and call TEE API's
+
+Clone the provided binaries.
+
+Run the QEMU as below:
+
+![Run-QEMU](https://user-images.githubusercontent.com/36186082/184496639-ba4b2044-78d9-487e-8044-dd23523778bf.png)
+
+![Stop at U-boot](https://user-images.githubusercontent.com/36186082/184496747-859860bc-cb1f-4b1f-8f2f-0f350c6cbcef.png)
+
+![Stop at U-Boot and run Hello world](https://user-images.githubusercontent.com/36186082/184496718-777709f7-c48a-4c69-8d30-0f52bd66da32.png)
+
+![Early-TA-HelloWorld](https://user-images.githubusercontent.com/36186082/184496772-3b01a9ef-1bf3-44f8-ad78-c1c21bbaea8e.png)
+
+![Both Console](https://user-images.githubusercontent.com/36186082/184496797-1885301c-bfb3-43b3-8137-e96e108a8292.png)
+
+![Early-TA](https://user-images.githubusercontent.com/36186082/184496807-6e5dadef-52c8-4955-9b6d-090c39bb4c69.png)
+
+![Incement The value](https://user-images.githubusercontent.com/36186082/184496825-4e2ee2f6-e307-4cab-b0a5-f761c47ab3a3.png)
+
+
+
+
+
+
 
 https://github.com/OP-TEE/optee_os/commit/d0c636148b3a
 https://github.com/OP-TEE/optee_os/commit/ed30b6c7493cff4c2d29064f75b037f5677ddb67
