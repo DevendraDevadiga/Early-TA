@@ -1,8 +1,6 @@
 # OP-TEE 3.15 on QEMUv8
 Prebuilt OP-TEE 3.15 Binaries for QEMUv8 and Run x-test
 
-# How to run OP-TEE on QEMU and run the x-test.
-
 Refer this article for more information:
 
 https://bit.ly/3Kh2dRT
@@ -11,17 +9,21 @@ Also provided video for how to build and run the OP-TEE on QEMU:
 
 https://youtube.com/playlist?list=PLrwOamjP8JAKZ3hIdH1z3hxvYSq7XoI8d
 
+# Test at U-Boot
+# How to add helloworld as Early TA and implement a command in U-Boot to communicate with HelloWorld TA
 
+## 1. Download the prebuilt binaries.
 Download the binaries provided in this repository.
 
 ```ruby
-$ git clone https://github.com/DevendraDevadiga/optee_qemu_armv8a_prebuilt_binaries.git
-$ cd optee_qemu_armv8a_prebuilt_binaries
+$ git clone https://github.com/DevendraDevadiga/Early-TA.git
+$ cd Early-TA-Demo/optee_qemu_armv8a_prebuilt_binaries
 $ ls
 optee_qemu_armv8a  README.md
 $ cd optee_qemu_armv8a
 $ chmod 777 *
 ```
+## 2. Run QEMU
 If want share the folders between your Host PC and QEMU Linux, run below command:
 ```ruby
 $ sudo ./run_qemu_share_files.sh
@@ -30,6 +32,45 @@ Otherwise run the below command:
 ```ruby
 $ sudo ./run_qemu.sh
 ```
+Two terminals will be opened ans pop-up. One for Secure world (OP-TEE) and another for Normal World (Linux) as below
+
+![qemu_secure_and_normal_world_terminals](https://user-images.githubusercontent.com/36186082/147329631-b5e6bca0-c334-4418-971b-f210c0a6038e.png)
+
+Type "c" (Continue) on qemu console. OP-TEE prints will display on Secure world console. 
+
+![Run-QEMU](https://user-images.githubusercontent.com/36186082/184496639-ba4b2044-78d9-487e-8044-dd23523778bf.png)
+
+## 3. Stop at U-Boot
+Currently boot delay is given as 5 seconds. Just press enter in the console to stop at U-Boot prompt
+
+![Stop at U-boot](https://user-images.githubusercontent.com/36186082/184496747-859860bc-cb1f-4b1f-8f2f-0f350c6cbcef.png)
+
+## 4. Early TA already initialized 
+In the secure console you are able to observe Early TA related messages. Currently "Hello World" TA is added as Early TA which built with OP-TEE binary.
+
+![Early-TA-HelloWorld](https://user-images.githubusercontent.com/36186082/184496772-3b01a9ef-1bf3-44f8-ad78-c1c21bbaea8e.png)
+
+## 5. Run the command "optee_helloworld" at U-Boot
+In U-Boot added the implementation of "optee_helloworld" command. To get the usage information, just type the command as below:
+
+![Stop at U-Boot and run Hello world](https://user-images.githubusercontent.com/36186082/184496718-777709f7-c48a-4c69-8d30-0f52bd66da32.png)
+
+## 6. Observe both console logs
+Put the console side by side to see the logs. Press enter many times in secure console log to see the logs when we just run the "optee_helloworld" command.
+
+![Both Console](https://user-images.githubusercontent.com/36186082/184496797-1885301c-bfb3-43b3-8137-e96e108a8292.png)
+
+## 7. Run "optee_helloworld" command at U-Boot, which will load "Hello World" early TA in OP-TEE
+Pass the value as 99 to command, so that in OP-TEE, Hello World TA will incrment the value to 100.
+![Early-TA](https://user-images.githubusercontent.com/36186082/184496807-6e5dadef-52c8-4955-9b6d-090c39bb4c69.png)
+
+Run the another test by passing value 199 to command, so that Early TA will increase the value to 200.
+
+![Incement The value](https://user-images.githubusercontent.com/36186082/184496825-4e2ee2f6-e307-4cab-b0a5-f761c47ab3a3.png)
+
+# Test with Linux
+
+# How to run OP-TEE on QEMU and run the x-test.
 
 Two terminals will be opened ans pop-up. One for Secure world (OP-TEE) and another for Normal World (Linux) as below
 
