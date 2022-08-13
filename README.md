@@ -119,6 +119,7 @@ CFG_IN_TREE_EARLY_TAS += avb/023f8f1a-292a-432b-8fc4-de8471358067
  In U-Boot, sandbox driver available for testing AVB and RPMB with RPC:
 https://github.com/u-boot/u-boot/blob/a94ab561e2f49a80d8579930e840b810ab1a1330/drivers/tee/sandbox.c
 
+# How to add helloworld as Early TA and implement a command in U-Boot to communicate with HelloWorld TA
 
 
 https://github.com/OP-TEE/optee_os/commit/d0c636148b3a
