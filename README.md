@@ -194,3 +194,25 @@ https://optee.readthedocs.io/en/latest/architecture/trusted_applications.html#ea
 https://github.com/OP-TEE/optee_os/blob/3.6.0/mk/config.mk#L247-L253
 
 https://github.com/OP-TEE/optee_os/issues/3305
+
+
+# OP-TEE OS 
+# Add an early TA
+# Early TA/ User Space TA/ Pseudo TA - Which is loaded into OP-TEE first?
+# QEMU supports early TA?
+# Integrity check & encryption of early TA 
+# early TA: avb
+# Run ta before normal world starts
+# stm32mp1: CFG_EARLY_TA
+# EARLY_TA_PATHS
+# CFG_EARLY_TA=y
+
+# Add an early TA
+# Early TA/ User Space TA/ Pseudo TA - Which is loaded into OP-TEE first?
+# QEMU supports early TA?
+# Integrity check & encryption of early TA 
+# early TA: avb
+# Run ta before normal world starts
+# stm32mp1: CFG_EARLY_TA
+# EARLY_TA_PATHS
+# CFG_EARLY_TA=y
