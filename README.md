@@ -1,6 +1,9 @@
 # Early-TA
 Detail about Early TA
 
+## YouTube Video
+https://youtu.be/WPAljopdWGg
+
 # What is Early TA (Trusted Application)?
 
 Early TAs and Pseudo TAs are part of the OP-TEE binary so they are available immediately after boot. Early TAs run in user space, Pseudo TAs run in kernel space.
@@ -56,6 +59,8 @@ You can provide multiple Erly TA paths:
 ```
 
 # How to load Early TA at U-Boot level using U-Boot commands.
+YouTube Video:
+https://youtu.be/WPAljopdWGg
 
 In U-Boot, OP-TEE driver will be available in this path:
 u-boot/drivers/tee/optee/
@@ -120,6 +125,8 @@ CFG_IN_TREE_EARLY_TAS += avb/023f8f1a-292a-432b-8fc4-de8471358067
 https://github.com/u-boot/u-boot/blob/a94ab561e2f49a80d8579930e840b810ab1a1330/drivers/tee/sandbox.c
 
 # How to add helloworld as Early TA and implement a command in U-Boot to communicate with HelloWorld TA
+YouTube Video :
+https://youtu.be/WPAljopdWGg
 
 ## 1. Download the prebuilt binaries.
 Download the binaries provided in this repository.
