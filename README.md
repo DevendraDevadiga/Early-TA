@@ -4,6 +4,11 @@ Detail about Early TA
 ## YouTube Video
 https://youtu.be/WPAljopdWGg
 
+# Get more information on Quora Link below:
+
+https://howtorunopteeonqemuarmv8v7.quora.com/?invite_code=ym8C6ev4mVZUnJMl2s3J
+
+
 # What is OP-TEE Early TA (Trusted Application)?
 
 Early TAs and Pseudo TAs are part of the OP-TEE binary so they are available immediately after boot. Early TAs run in user space, Pseudo TAs run in kernel space.
